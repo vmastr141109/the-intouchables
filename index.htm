@@ -1,0 +1,176 @@
+<HTML> 
+<HEAD>
+<TITLE> THE INTOUCHABLES </TITLE>
+<style>
+        body { 
+            margin: 40px;
+            background-image: url("3.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
+<H1 class="white-text center"> THE INTOUCHABLES </H1> <HR>
+</HEAD>
+<BODY>
+<div class="container">
+    <img src="intouchables.jpg">
+    <H2 class="white-text"> <B> Duration: </B> 1h52m | 2011 | R | IMDb rating: 8.5/10  <BR> <BR> After he becomes a quadriplegic from a paragliding accident, an aristocrat hires a young man from the projects to be his caregiver. </H2>
+    
+
+</div>
+<HR>
+<H3 class="white-text"> <B> <U> The Intouchables </U> </B> is a 2011 French buddy comedy-drama film. This heartfelt film follows the unlikely friendship between Philippe, a wealthy man living with quadriplegia, and Driss, a young man from a tough background who becomes his live-in caregiver. Coming from completely different worlds, the two clash at first—but Driss’s bold, unconventional approach soon brings new energy and humor into Philippe’s carefully controlled life. As they spend time together, both men are changed by the relationship: Philippe is pushed to reconnect with joy, risk, and human connection, while Driss discovers new perspectives, responsibilities, and opportunities he never imagined. Blending humor, warmth, and emotion, the film explores dignity, trust, and the power of friendship to transform lives beyond social boundaries. </H3>
+<HR>
+<H2 class="white-text"> <U>  Directors: </U> </H2> 
+<H3 class="white-text"> Olivier Nakache </H3>
+<H3 class="white-text"> Éric Toledano </H3>
+<BR> 
+<H2 class="white-text"> <U>  Writers: </U> </H2> 
+<H3 class="white-text"> Olivier Nakache </H3>
+<H3 class="white-text"> Éric Toledano </H3>
+<BR>
+<H2 class="white-text"> <U>  Starring: </U> </H2> 
+<H3 class="white-text"> François Cluzet </H3>
+<H3 class="white-text"> Omar Sy </H3>
+<H3 class="white-text"> Anne Le Ny </H3>
+<BR>
+<HR>
+<h2 class="white-text"><u>Trailer:</u></h2>
+
+<div class="video-container">
+  <video id="myVideo" width="640" height="360">
+    <source src="the_intouchables.mp4" type="video/mp4">
+    Το πρόγραμμα περιήγησής σας δεν υποστηρίζει το βίντεο.
+  </video>
+
+  <!-- Progress bar πάνω από όλα -->
+  <div class="progress-container">
+    <label class="white-text">Progress:</label>
+    <input type="range" id="progressBar" min="0" max="100" value="0">
+  </div>
+
+  <!-- Controls κάτω από το progress bar -->
+  <div class="controls">
+    <button onclick="playVideo()">Play</button>
+    <button onclick="pauseVideo()">Pause</button>
+    <button onclick="muteVideo()">Mute/Unmute</button>
+    <button onclick="toggleFullScreen()">Fullscreen</button>
+
+    <!-- Volume slider δίπλα από τα κουμπιά -->
+    <label class="white-text">Volume:
+      <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1">
+    </label>
+  </div>
+</div>
+
+<style>
+  /* Container του βίντεο */
+  .video-container {
+    width: 640px;
+    position: relative;
+    margin-top: 10px;
+    background-color: black;
+    padding: 10px;
+  }
+
+  /* Progress bar πάνω από όλα */
+  .progress-container {
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+
+  /* Controls κάτω από progress bar */
+  .controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  button {
+    margin-right: 5px;
+  }
+
+  input[type="range"] {
+    vertical-align: middle;
+  }
+
+  /* Λευκά γράμματα για labels */
+  .white-text {
+    color: white;
+    font-weight: bold;
+  }
+
+  /* Κάνουμε τον slider του ήχου και progress πιο εμφανή */
+  #progressBar, #volumeControl {
+    width: 200px;
+  }
+</style>
+
+<script>
+const video = document.getElementById("myVideo");
+const progressBar = document.getElementById("progressBar");
+const volumeControl = document.getElementById("volumeControl");
+
+// Play / Pause / Mute / Volume
+function playVideo() {
+  video.play();
+}
+
+function pauseVideo() {
+  video.pause();
+}
+
+function muteVideo() {
+  video.muted = !video.muted;
+}
+
+volumeControl.addEventListener('input', () => {
+  video.volume = volumeControl.value;
+});
+
+// Fullscreen
+function toggleFullScreen() {
+  if (video.requestFullscreen) {
+    video.requestFullscreen();
+  } else if (video.webkitRequestFullscreen) { /* Safari */
+    video.webkitRequestFullscreen();
+  } else if (video.msRequestFullscreen) { /* IE11 */
+    video.msRequestFullscreen();
+  }
+}
+
+// Update progress bar while playing
+video.addEventListener('timeupdate', () => {
+  const value = (100 / video.duration) * video.currentTime;
+  progressBar.value = value;
+});
+
+// Seek video when slider is moved
+progressBar.addEventListener('input', () => {
+  video.currentTime = video.duration * (progressBar.value / 100);
+});
+</script>
+<style>
+  .white-text {
+    color: white;
+  }
+</style>
+<style>
+  .center {
+    text-align: center;
+  }
+</style>
+<style>
+  body {
+    margin: 100px;   
+  }
+</style>
+<style>
+.container {
+    display: flex;           
+    align-items: flex-start; 
+    gap: 20px;              
+}
+</style>
+</BODY>
+</HTML>
